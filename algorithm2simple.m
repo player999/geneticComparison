@@ -10,7 +10,7 @@ pop = binary_generate_pop(pop_size, 2, fitness_function);
 
 for generation = 1:generations
     %Evaluate
-    scores = evaluate_function(fitness_function, pop);
+    scores = binary_evaluate_function(fitness_function, pop);
 
     %Randomly select pairs
     pair1idx = randsample(pop_size, pop_size / 2);
@@ -34,7 +34,7 @@ for generation = 1:generations
     end
 
     %New scores
-    new_scores = evaluate_function(fitness_function, new_pop);
+    new_scores = binary_evaluate_function(fitness_function, new_pop);
 
     %Tournament
     new_pop2 = [];
