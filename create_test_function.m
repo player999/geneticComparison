@@ -1,9 +1,9 @@
 function f = create_test_function(fname)
     if strcmp(fname, 'F15') == 1
-        f = struct('func', @create_function_15, 'xlim', [0,1]);
+        f = struct('func', @create_function_15, 'xlim', [0,1], 'peaks', @peaks15);
     end
     if strcmp(fname, 'F16') == 1
-        f = struct('func', @create_function_16, 'xlim', [0,1]);
+        f = struct('func', @create_function_16, 'xlim', [0,1], 'peaks', @peaks15);
     end
 end
 
@@ -20,4 +20,12 @@ function rval = create_function_16(args)
     for i = 1:numel(args)
        rval = rval + exp(-2 * log(2) * ((args(i) - 0.1) / 0.8 )^2) * sin(5 * pi * args(i)) ^ 6;
     end
+end
+
+function rval = peaks15(nargs)
+    vectors = {};
+    for i=1:nargs
+       vectors{i} = [0.1:0.2:0.9];
+    end
+    rval = combvec(vectors{:})';
 end
