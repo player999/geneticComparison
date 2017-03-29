@@ -12,9 +12,8 @@ params.mutation_rate = 0.02;
 params.mutation_percentage = 0.3;
 params.common.max_evals = 50000;
 
-%Generate population
+%Generate 
 func = create_test_function(params.common.function);
-population = rand(params.common.population, params.common.nargs);
-population = (population - func.xlim(1)) ./ (func.xlim(2) - func.xlim(1));
+population = make_populations(params.common.population, params.common.nargs, repmat(func.xlim, params.common.nargs, 1), params.common.runs);
 
-results = analyze_function(params, population);
+results = analyze_function(params, population(:,:,1));
