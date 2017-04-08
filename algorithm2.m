@@ -1,4 +1,4 @@
-function [result_population, nfe] = algorithm2(parameters, population)
+function [result_population, data] = algorithm2(parameters, population)
     pop_size = parameters.common.population;
     mutation_rate = parameters.mutation_rate;
     mutation_percentage =  parameters.mutation_percentage;
@@ -83,5 +83,6 @@ function [result_population, nfe] = algorithm2(parameters, population)
     for i=1:pop_size
         result_population = cat(1, result_population, binary_decode(pop(i, :), fitness_function));
     end
-    nfe = generation * 2;
+    data = struct;
+    data.nfe = generation * 2;
 end
