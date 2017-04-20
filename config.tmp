@@ -1,0 +1,12 @@
+params = struct;
+params.common = struct;
+params.common.nargs = %NARGS%;
+params.common.function = '%TEST_FUNCTION%';
+params.common.algorithm = '%ALGORITHM%';
+params.common.runs = %RUNS%;
+params.common.delta = %DELTA%;
+params.common.sigma = %SIGMA%;
+params.common.population = %POPULATION%;
+params.mutation_rate = %MUTATION_RATE%;
+params.mutation_percentage = %MUTATION_PERCENTAGE%;
+params.common.max_evals = %MAX_EVALS%;
