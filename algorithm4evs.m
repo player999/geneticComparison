@@ -21,6 +21,7 @@ function [result_population, data] = algorithm4evs(parameters, population)
     pairs2 = find(pairs2);
     distances = arrayfun(@(x)(real_euclidian_distance(pop(pairs1(x),:), pop(pairs2(x),:))), 1:pop_size/2);
     sigma = mean(distances) * sigma_coef;
+    nfe = 0;
 
     range = size(pop, 2);
     pop = cat(2, pop, normrnd(0, sigma, size(pop)));
@@ -36,6 +37,7 @@ function [result_population, data] = algorithm4evs(parameters, population)
 
         %Evaluate
         parent_score = real_evaluate_function(fitness_function, pop(:,1:range));
+        nfe = nfe + size(pop, 1);
         last_five = last_five(2:end);
         last_five{end+1} = mean(parent_score);
         if(abs(last_five{1} - last_five{5}) < 0.00001 )
@@ -43,6 +45,7 @@ function [result_population, data] = algorithm4evs(parameters, population)
             break;
         end
         offspring_score = real_evaluate_function(fitness_function, offs(:,1:range));
+        nfe = nfe + size(offs,1);
         mean_score = mean(parent_score);
         display(sprintf('Mean score: %f', mean_score));
 
@@ -56,6 +59,6 @@ function [result_population, data] = algorithm4evs(parameters, population)
         end
         pop = new_pop;
     end
-    data.nfe = generation * 2;
+    data.nfe = nfe;
     display(sprintf('Mean score: %f', mean_score));
 end

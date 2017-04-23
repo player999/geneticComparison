@@ -7,6 +7,7 @@ function [result_population, data] = algorithm4(parameters, population)
     generations = floor(parameters.common.max_evals / 2);
     fitness_function = create_test_function(parameters.common.function);
     data = struct;
+    nfe = 0;
 
     %Init population
     pop = [];
@@ -36,6 +37,7 @@ function [result_population, data] = algorithm4(parameters, population)
 
         %Evaluate
         parent_score = real_evaluate_function(fitness_function, pop);
+        nfe = nfe + size(pop, 1);
         last_five = last_five(2:end);
         last_five{end+1} = mean(parent_score);
         if(abs(last_five{1} - last_five{5}) < 0.00001 )
@@ -43,6 +45,7 @@ function [result_population, data] = algorithm4(parameters, population)
             break;
         end
         offspring_score = real_evaluate_function(fitness_function, offs);
+        nfe = nfe + size(offs, 1);
         mean_score = mean(parent_score);
         display(sprintf('Mean score: %f', mean_score));
         if (sigma_option == 2) && (mod(generation, sigma_freq) == 0)
@@ -66,5 +69,5 @@ function [result_population, data] = algorithm4(parameters, population)
         end
         pop = new_pop;
     end
-    data.nfe = generation * 2;
+    data.nfe = nfe;
 end

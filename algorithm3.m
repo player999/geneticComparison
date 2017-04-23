@@ -5,6 +5,7 @@ function [result_population, data] = algorithm3(parameters, population)
     generations = floor(parameters.common.max_evals / 2);
     fitness_function = create_test_function(parameters.common.function);
     data = struct;
+    nfe = 0;
     
     %Init population
     pop = [];
@@ -23,6 +24,7 @@ function [result_population, data] = algorithm3(parameters, population)
 
         %Evaluate
         parent_score = real_evaluate_function(fitness_function, pop);
+        nfe = nfe + size(pop, 1);
         last_five = last_five(2:end);
         last_five{end+1} = mean(parent_score);
         if(abs(last_five{1} - last_five{5}) < 0.00001 )
@@ -30,6 +32,7 @@ function [result_population, data] = algorithm3(parameters, population)
             break;
         end
         offspring_score = real_evaluate_function(fitness_function, offs);
+        nfe = nfe + size(offs, 1);
 
         %Tournament
         new_pop = [];
@@ -41,5 +44,5 @@ function [result_population, data] = algorithm3(parameters, population)
         end
         pop = new_pop;
     end
-    data.nfe = generation * 2;
+    data.nfe = nfe;
 end

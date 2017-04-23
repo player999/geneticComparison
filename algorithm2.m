@@ -4,6 +4,7 @@ function [result_population, data] = algorithm2(parameters, population)
     mutation_percentage =  parameters.mutation_percentage;
     generations = floor(parameters.common.max_evals / 2);
     fitness_function = create_test_function(parameters.common.function);
+    nfe = 0;
    
     pop = [];
     for i=1:pop_size
@@ -14,6 +15,7 @@ function [result_population, data] = algorithm2(parameters, population)
     for generation = 1:generations
         %Evaluate
         scores = binary_evaluate_function(fitness_function, pop);
+        nfe = nfe + size(pop, 1);
         last_five = last_five(2:end);
         last_five{end+1} = mean(scores);
         if(abs(last_five{1} - last_five{5}) < 0.00001 )
@@ -42,6 +44,7 @@ function [result_population, data] = algorithm2(parameters, population)
 
         %New scores
         new_scores = binary_evaluate_function(fitness_function, new_pop);
+        nfe = nfe + size(new_pop, 1);
 
         %Tournament
         new_pop2 = [];
@@ -84,5 +87,5 @@ function [result_population, data] = algorithm2(parameters, population)
         result_population = cat(1, result_population, binary_decode(pop(i, :), fitness_function));
     end
     data = struct;
-    data.nfe = generation * 2;
+    data.nfe = nfe;
 end
