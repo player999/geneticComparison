@@ -1,5 +1,6 @@
 function append_log(results, params)
     f = fopen('testing.log', 'a+');
+    write_excel_result(results, params);
     fwrite(f, sprintf('-------------------------------------------------------------------------------\n'));
     line = sprintf('%s\n', datestr(datetime));
     fwrite(f, line);
