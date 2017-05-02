@@ -1,5 +1,5 @@
 function write_excel_result(results, params)
-    resfile = sprintf('result_%s.xlsx', datestr(datetime,'dd_MM_yyyy_HH_mm_ss')); 
+    resfile = sprintf('result_%s.xlsx', datestr(datetime,'dd_mm_yyyy_HH_MM_SS')); 
     copyfile('result_template.xlsx', resfile);
     xlswrite(resfile, results.per_run{1}.nfe, 1, 'A6');%Run1 NFE
     xlswrite(resfile, results.per_run{1}.pn, 1, 'B6');%Run1 NP
