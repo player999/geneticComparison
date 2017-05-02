@@ -1,0 +1,14 @@
+params = struct;
+params.common = struct;
+params.common.nargs = %common.nargs%;
+params.common.function = '%common.function%';
+params.common.algorithm = 'algorithm4';
+params.common.runs = 10;
+params.common.delta = %common.delta%;
+params.common.sigma = 0.01;
+params.common.population = 4 * (5 ^ params.common.nargs);
+params.offspring = %offspring%;
+params.gaussian_sigma = %gaussian_sigma%;
+params.common.max_evals = 20000000;
+params.sigma_option = %sigma_option%;
+params.sigma_freq = 10;
