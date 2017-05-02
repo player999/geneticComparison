@@ -7,6 +7,5 @@ for i = 1:numel(run_range)
     func = create_test_function(params.common.function);
     results = multiple_runs(params, population);
     append_log(results, params);
-    write_excel_result(results, params);
-    append_excel_result1(results, params, 'res.xls');
+    append_excel_result1(results, params, 'res.xlsx');
 end
