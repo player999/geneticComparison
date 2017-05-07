@@ -38,7 +38,10 @@ function [result_population, data] = algorithm43(parameters, population)
         last_five = last_five(2:end);
         last_five{end+1} = mean(parent_score);
         if(abs(last_five{1} - last_five{5}) < 0.00001 )
-            result_population = pop;
+            result_population = [];
+            for i=1:pop_size
+                result_population = cat(1, result_population, real_decode(pop(i, :), fitness_function));
+            end
             break;
         end
         offspring_score = real_evaluate_function(fitness_function, offs(:,range:end));
