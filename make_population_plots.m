@@ -11,9 +11,9 @@ function make_population_plots(source_file_fmt, dst_dir, func)
     f = fun.func;
     if dims == 1
         xrange = fun.xlim(1):(fun.xlim(2) - fun.xlim(1))/1500:fun.xlim(2);
-        yfunction = zeros(1, size(xrange,1));
-        for i=1:size(xrange,1)
-            yfunction(i) = f(xrange(i,:)); 
+        yfunction = zeros(1, size(xrange,2));
+        for i=1:size(xrange,2)
+            yfunction(i) = f(xrange(i)); 
         end
     elseif dims == 2
         [xrange1,xrange2] = meshgrid(fun.xlim(1):(fun.xlim(2) - fun.xlim(1))/200:fun.xlim(2), fun.xlim(1):(fun.xlim(2) - fun.xlim(1))/200:fun.xlim(2));
@@ -48,8 +48,8 @@ function make_population_plots(source_file_fmt, dst_dir, func)
                scatter(seeds, yseeds);
            else
                surf(xrange1, xrange2, yfunction);
-               view(-40, 40);
-               scatter3(seeds(:,1), seeds(:,2), yseeds, 'filled');
+               view(142, 48);
+               scatter3(seeds(:,1), seeds(:,2), yseeds, 'filled', 'MarkerFaceColor', 'red');
            end
            hold off;
            save_fn = sprintf([dst_dir '/' figname '_%d.png'], i);

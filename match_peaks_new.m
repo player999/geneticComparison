@@ -10,7 +10,7 @@ function seeds = match_peaks_new(apeaks, epsilon, delta, func)
         scores(index) = [];
         x = apeaks(index, :);
         apeaks(index, :) = [];
-        if abs(1 - sc) < delta
+        if 1%abs(1 - sc) < delta
             if size(seeds, 1) == 0
                seeds = cat(1, seeds, x); 
             else
