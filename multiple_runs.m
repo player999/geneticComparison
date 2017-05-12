@@ -7,6 +7,7 @@ function results = multiple_runs(params, populations)
     APA = 0;
     ADA = 0;
     ANP = 0;
+    ANP_NEW = 0;
     results = struct;
     for i=1:runs
         res{i} = analyze_function(params, populations(:,:,1));
@@ -18,6 +19,7 @@ function results = multiple_runs(params, populations)
         APA = APA + res{i}.pa;
         ADA = ADA + res{i}.da;
         ANP = ANP + res{i}.pn;
+        ANP_NEW = ANP_NEW + res{i}.pn_new;
     end
     results.apr = APR / runs;
     results.apf = APF / runs;
@@ -25,5 +27,6 @@ function results = multiple_runs(params, populations)
     results.apa = APA / runs;
     results.ada = ADA / runs;
     results.anp = ANP / runs;
-    results.per_run = res;
+    results.anp_new = ANP_NEW / runs;
+    results.per_run = res; 
 end
