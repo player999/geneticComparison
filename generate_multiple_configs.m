@@ -1,4 +1,4 @@
-function generate_multiple_configs(varargs, config_file)
+function generate_multiple_configs(varargs, config_file, fname_fmt)
     changing_values = {};
     specific_names = fieldnames(varargs);
     common_idx = 999;
@@ -43,7 +43,7 @@ function generate_multiple_configs(varargs, config_file)
                 new_file = strrep(new_file, ['%' name_list{j} '%'], sprintf('%f', param_set(j)));
             end
         end
-        fh = fopen(sprintf('test_config_%d.m', i), 'w');
+        fh = fopen(sprintf(fname_fmt, i), 'w');
         fwrite(fh, new_file);
         fclose(fh);
     end

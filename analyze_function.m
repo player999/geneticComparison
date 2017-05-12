@@ -27,13 +27,16 @@ function results = analyze_function(params, population)
     matched_peaks1 = match_peaks(params, result_population, peaks);
     matched_peaks2 = match_peaks_new(result_population, params.common.sigma, params.common.delta, func);
     peak_number = numel(unique(matched_peaks1(:,2)));
+    peak_number2 = size(matched_peaks2,1);
     pr = peak_number /  size(peaks, 1);
     [pa, da] = accuracy(params, peaks, population);
     res = struct;
     res.nfe = data.nfe;
     res.pn = peak_number;
+    res.pn_new = peak_number2;
     res.pr = pr;
     res.pa = pa;
     res.da = da;
+    res.pop = result_population;
     results = res;
 end
