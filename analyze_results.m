@@ -6,6 +6,7 @@ function analyze_results(tmp_file, dst_dir)
         params_file = results_file(1:end-4);
         load(results_file);
         eval(params_file);
+        results = update_results(results, params);
         table_list = cat(1, table_list, prepare_result(results, params));
         idx = idx + 1; 
     end
@@ -20,6 +21,7 @@ function analyze_results(tmp_file, dst_dir)
         save(fname_mat, 'table');
     else
         copyfile('result_template3.xlsx', fname_xls);
-        xlswrite(fname_xls, table_list, 'A9');
+        xlswrite(fname_xls, table_list, 1, 'A9');
     end
+    make_population_plots(tmp_file, dst_dir, params.common.function);
 end
