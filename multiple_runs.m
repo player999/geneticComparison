@@ -10,7 +10,7 @@ function results = multiple_runs(params, populations)
     ANP_NEW = 0;
     results = struct;
     for i=1:runs
-        res{i} = analyze_function(params, populations(:,:,1));
+        res{i} = analyze_function(params, populations(:,:,i));
         ANFE = ANFE + res{i}.nfe;
         APR = APR + res{i}.pr;
         if res{i}.pr == 1 
