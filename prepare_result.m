@@ -28,7 +28,7 @@ function res = prepare_result(results, params)
        res(offset + 3) = dta.pr;
        res(offset + 4) = dta.pa;
        res(offset + 5) = dta.da;
-       offset = offset + 6 * i;
+       offset = offset + 6;
     end
  
    res(offset + 0) = results.anfe;
