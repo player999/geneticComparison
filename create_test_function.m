@@ -30,18 +30,12 @@ function f = create_test_function(fname)
     end
     if strcmp(fname, 'F22') == 1
         f = struct('func', @create_function_22, 'xlim', [-600,600], 'peaks', @peaks22);
-        f.gpeaks = @gpeaks22;
+        f.gpeaks = @peaks22;
     end
     if strcmp(fname, 'F46') == 1
         f = struct('func', @create_function_46, 'xlim', [-3,3], 'peaks', @peaks46);
         f.gpeaks = @gpeaks46;
         f.lpeaks = @lpeaks46;
-    end
-    if strcmp(fname, 'F22') == 1
-        f = struct('func', @create_function_22, 'xlim', [-600,600], 'peaks', @peaks22);
-    end
-    if strcmp(fname, 'F46') == 1
-        f = struct('func', @create_function_46, 'xlim', [-3,3], 'peaks', @peaks46);
     end
 end
 
@@ -120,12 +114,12 @@ function rval = peaks15(nargs)
     rval = combvec(vectors{:})';
 end
 
-function rval = gpeaks16(args)
+function rval = gpeaks16(nargs)
     rval = [0.1];
-    rval = repmat(rval, [1 args]);
+    rval = repmat(rval, [1 nargs]);
 end
 
-function rval = lpeaks16(args)
+function rval = lpeaks16(nargs)
      vectors = {};
     for i=1:nargs
        vectors{i} = [0.1:0.2:0.9];
@@ -142,12 +136,12 @@ function rval = peaks18(nargs)
     rval = combvec(vectors{:})';
 end
 
-function rval = gpeaks19(args)
+function rval = gpeaks19(nargs)
     rval = [0.15^(4/3)];
-    rval = repmat(rval, [1 args]);
+    rval = repmat(rval, [1 nargs]);
 end
 
-function rval = lpeaks19(args)
+function rval = lpeaks19(nargs)
     vectors = {};
     for i=1:nargs
        vectors{i} = arrayfun(@(x)(x^(4/3)), [0.15:0.2:0.95]);
@@ -174,7 +168,7 @@ end
 
 function rval = gpeaks20max(nargs)
     rval = [0];
-    rval = repmat(rval, [1 args]);
+    rval = repmat(rval, [1 nargs]);
 end
 
 function rval = lpeaks20max(nargs)

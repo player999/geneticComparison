@@ -22,7 +22,6 @@ function analyze_results(tmp_file, dst_dir)
     else
         copyfile('result_template4.xlsx', fname_xls);
         xlswrite(fname_xls, table_list, 1, 'A9');
-        xlswrite(fname_xls, fname_xls, 1, 'I5');
     end
     make_population_plots(tmp_file, dst_dir, params.common.function);
 end
