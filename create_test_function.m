@@ -37,6 +37,12 @@ function f = create_test_function(fname)
         f.gpeaks = @gpeaks46;
         f.lpeaks = @lpeaks46;
     end
+    if strcmp(fname, 'F22') == 1
+        f = struct('func', @create_function_22, 'xlim', [-600,600], 'peaks', @peaks22);
+    end
+    if strcmp(fname, 'F46') == 1
+        f = struct('func', @create_function_46, 'xlim', [-3,3], 'peaks', @peaks46);
+    end
 end
 
 function rval = create_function_15(args)
