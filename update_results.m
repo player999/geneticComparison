@@ -3,6 +3,7 @@ function res = update_results(results, params)
     ave = 0;
     aveg = 0;
     avel = 0;
+    avef = 0;
     for i = 1:numel(results.per_run)
        matched_peaks = match_peaks_new(results.per_run{i}.pop, params.common.sigma, params.common.delta, func);
        func = create_test_function(params.common.function);
@@ -26,6 +27,7 @@ function res = update_results(results, params)
        np = size(matched_peaks, 1);
        results.per_run{i}.pn_new = np;
        results.per_run{i}.falseratio = 1 - results.per_run{i}.pn / np;
+       avef = avef + results.per_run{i}.falseratio;
        ave = ave + np;
     end
     ave = ave / numel(results.per_run);
@@ -37,7 +39,7 @@ function res = update_results(results, params)
         avel = avel / numel(results.per_run);
         results.anpl = avel;
     end
-    results.afalseratio = results.per_run{i}.falseratio / numel(results.per_run);
+    results.afalseratio = avef / numel(results.per_run);
     results.anp_new = ave;
     res = results;
 end

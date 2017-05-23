@@ -11,7 +11,7 @@ function f = create_test_function(fname)
     end
     if strcmp(fname, 'F18') == 1
         f = struct('func', @create_function_18, 'xlim', [0,1], 'peaks', @peaks18);
-        f.gpeaks = @gpeaks18;
+        f.gpeaks = @peaks18;
         f.lpeaks = @peaks_empty;
     end
     if strcmp(fname, 'F19') == 1
