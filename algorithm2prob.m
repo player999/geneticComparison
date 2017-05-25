@@ -1,4 +1,4 @@
-function [result_population, data] = algorithm2(parameters, population)
+function [result_population, data] = algorithm2prob(parameters, population)
     pop_size = parameters.common.population;
     mutation_rate = parameters.mutation_rate;
     mutation_percentage =  parameters.mutation_percentage;
