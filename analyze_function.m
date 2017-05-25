@@ -3,6 +3,8 @@ function results = analyze_function(params, population)
     
     if(strcmp(algo,'algorithm2') == 1)
         algorithm = @algorithm2;
+    elseif (strcmp(algo,'algorithm2prob') == 1)
+        algorithm = @algorithm2prob;
     elseif (strcmp(algo,'algorithm3') == 1)
         algorithm = @algorithm3;
     elseif (strcmp(algo,'algorithm4') == 1)
