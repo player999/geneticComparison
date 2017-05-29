@@ -26,7 +26,7 @@ function f = create_test_function(fname)
     if strcmp(fname, 'F20max') == 1
         f = struct('func', @create_function_20max, 'xlim', [-5.12,5.12], 'peaks', @peaks20max);
         f.gpeaks = @gpeaks20max;
-        f.lpeaks = @lpeaks20max;
+        f.lpeaks = @peaks_empty;
     end
     if strcmp(fname, 'F22') == 1
         f = struct('func', @create_function_22, 'xlim', [-600,600], 'peaks', @peaks22);
