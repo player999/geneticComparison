@@ -1,0 +1,146 @@
+-------------------------------------------------------------------------------
+05-Jun-2017 11:37:51
+===Parameters===
+Specific offspring count: 1
+Specific gaussian sigma: 0.500000
+Specific sigma calculation option: 2
+Specific sigma calculation frequency: 60
+Function name: F20max
+Arguments count: 1
+Algorithm name: algorithm4
+Runs count: 10
+Delta: 0.010000
+Sigma: 0.010000
+Population size: 500
+Maximal evaluations count: 50000
+===Results===
+All peaks found: 1.000000
+Average peak ratio: 1.000000
+Average peak accuracy: 0.017629
+Average distance accuracy: 0.007106
+Average number of function evalualtions: 224900.000000
+Average number of peaks: 1.000000
+	Run 1: Function evaluations: 288500
+	Run 1: Peak number: 1
+	Run 1: Peak ratio: 1.000000
+	Run 1: Peak accuracy: 0.000010
+	Run 1: Distance accuracy: 0.000230
+	Run 2: Function evaluations: 212500
+	Run 2: Peak number: 1
+	Run 2: Peak ratio: 1.000000
+	Run 2: Peak accuracy: 0.016252
+	Run 2: Distance accuracy: 0.009052
+	Run 3: Function evaluations: 212500
+	Run 3: Peak number: 1
+	Run 3: Peak ratio: 1.000000
+	Run 3: Peak accuracy: 0.000929
+	Run 3: Distance accuracy: 0.002164
+	Run 4: Function evaluations: 230500
+	Run 4: Peak number: 1
+	Run 4: Peak ratio: 1.000000
+	Run 4: Peak accuracy: 0.056338
+	Run 4: Distance accuracy: 0.016859
+	Run 5: Function evaluations: 211500
+	Run 5: Peak number: 1
+	Run 5: Peak ratio: 1.000000
+	Run 5: Peak accuracy: 0.002566
+	Run 5: Distance accuracy: 0.003597
+	Run 6: Function evaluations: 221500
+	Run 6: Peak number: 1
+	Run 6: Peak ratio: 1.000000
+	Run 6: Peak accuracy: 0.074652
+	Run 6: Distance accuracy: 0.019410
+	Run 7: Function evaluations: 220500
+	Run 7: Peak number: 1
+	Run 7: Peak ratio: 1.000000
+	Run 7: Peak accuracy: 0.018373
+	Run 7: Distance accuracy: 0.009625
+	Run 8: Function evaluations: 226500
+	Run 8: Peak number: 1
+	Run 8: Peak ratio: 1.000000
+	Run 8: Peak accuracy: 0.001545
+	Run 8: Distance accuracy: 0.002791
+	Run 9: Function evaluations: 209500
+	Run 9: Peak number: 1
+	Run 9: Peak ratio: 1.000000
+	Run 9: Peak accuracy: 0.001562
+	Run 9: Distance accuracy: 0.002806
+	Run 10: Function evaluations: 215500
+	Run 10: Peak number: 1
+	Run 10: Peak ratio: 1.000000
+	Run 10: Peak accuracy: 0.004065
+	Run 10: Distance accuracy: 0.004527
+
+-------------------------------------------------------------------------------
+05-Jun-2017 11:49:01
+===Parameters===
+Specific offspring count: 1
+Specific gaussian sigma: 0.500000
+Specific sigma calculation option: 2
+Specific sigma calculation frequency: 60
+Function name: F20max
+Arguments count: 2
+Algorithm name: algorithm4
+Runs count: 10
+Delta: 0.010000
+Sigma: 0.010000
+Population size: 500
+Maximal evaluations count: 50000
+===Results===
+All peaks found: 1.000000
+Average peak ratio: 1.000000
+Average peak accuracy: 3.514871
+Average distance accuracy: 0.187725
+Average number of function evalualtions: 825600.000000
+Average number of peaks: 1.000000
+	Run 1: Function evaluations: 861500
+	Run 1: Peak number: 1
+	Run 1: Peak ratio: 1.000000
+	Run 1: Peak accuracy: 8.907086
+	Run 1: Distance accuracy: 0.387672
+	Run 2: Function evaluations: 1069500
+	Run 2: Peak number: 1
+	Run 2: Peak ratio: 1.000000
+	Run 2: Peak accuracy: 1.157449
+	Run 2: Distance accuracy: 0.109509
+	Run 3: Function evaluations: 914500
+	Run 3: Peak number: 1
+	Run 3: Peak ratio: 1.000000
+	Run 3: Peak accuracy: 1.860468
+	Run 3: Distance accuracy: 0.139977
+	Run 4: Function evaluations: 568500
+	Run 4: Peak number: 1
+	Run 4: Peak ratio: 1.000000
+	Run 4: Peak accuracy: 7.888888
+	Run 4: Distance accuracy: 0.344842
+	Run 5: Function evaluations: 1143500
+	Run 5: Peak number: 1
+	Run 5: Peak ratio: 1.000000
+	Run 5: Peak accuracy: 0.921214
+	Run 5: Distance accuracy: 0.097215
+	Run 6: Function evaluations: 779500
+	Run 6: Peak number: 1
+	Run 6: Peak ratio: 1.000000
+	Run 6: Peak accuracy: 7.850130
+	Run 6: Distance accuracy: 0.304028
+	Run 7: Function evaluations: 854500
+	Run 7: Peak number: 1
+	Run 7: Peak ratio: 1.000000
+	Run 7: Peak accuracy: 0.707003
+	Run 7: Distance accuracy: 0.084935
+	Run 8: Function evaluations: 499500
+	Run 8: Peak number: 1
+	Run 8: Peak ratio: 1.000000
+	Run 8: Peak accuracy: 1.584841
+	Run 8: Distance accuracy: 0.128753
+	Run 9: Function evaluations: 806500
+	Run 9: Peak number: 1
+	Run 9: Peak ratio: 1.000000
+	Run 9: Peak accuracy: 3.650438
+	Run 9: Distance accuracy: 0.200556
+	Run 10: Function evaluations: 758500
+	Run 10: Peak number: 1
+	Run 10: Peak ratio: 1.000000
+	Run 10: Peak accuracy: 0.621196
+	Run 10: Distance accuracy: 0.079762
+

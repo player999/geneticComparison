@@ -1,3 +1,14 @@
+ %  Copyright (C) 2017
+ %
+ %  Author: Kateryna Nikishchikhina <kateryna.nikishchikhina@gmail.com>
+ %
+ %  This program is free software; you can redistribute it and/or
+ %  modify it under the terms of the GNU General Public License as
+ %  published by the Free Software Foundation, version 2 of the
+ %  License.
+
+
+
 function offsprings = real_gaussian_mutation_2(vater, count, pop_size, func)
     range = size(vater, 2) / 2;
     tau_shtrikh = 1/sqrt(2 * pop_size);

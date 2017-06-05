@@ -1,3 +1,14 @@
+ %  Copyright (C) 2017
+ %
+ %  Author: Kateryna Nikishchikhina <kateryna.nikishchikhina@gmail.com>
+ %
+ %  This program is free software; you can redistribute it and/or
+ %  modify it under the terms of the GNU General Public License as
+ %  published by the Free Software Foundation, version 2 of the
+ %  License.
+
+
+
 function f = create_test_function(fname)
     if strcmp(fname, 'F15') == 1
         f = struct('func', @create_function_15, 'xlim', [0,1], 'peaks', @peaks15);
@@ -24,9 +35,8 @@ function f = create_test_function(fname)
         f.lpeaks = @peaks20min;
     end
     if strcmp(fname, 'F20max') == 1
-        f = struct('func', @create_function_20max, 'xlim', [-5.12,5.12], 'peaks', @peaks20max);
+        f = struct('func', @create_function_20max, 'xlim', [-5.12,5.12], 'peaks', @gpeaks20max);
         f.gpeaks = @gpeaks20max;
-        f.lpeaks = @peaks_empty;
     end
     if strcmp(fname, 'F22') == 1
         f = struct('func', @create_function_22, 'xlim', [-600,600], 'peaks', @peaks22);

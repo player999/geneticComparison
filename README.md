@@ -1,2 +1,14 @@
-# РЎРёСЃС‚РµРјР° "РњР°РєСЃРёРјСѓСЃ"
-Р§Р°СЃС‚РёРЅР° РґРёРїР»РѕРјРЅРѕС— СЂРѕР±РѕС‚Рё РљР°С‚РµСЂРёРЅРё РќС–РєС–С‰С–С…С–РЅРѕС—
+ %  Copyright (C) 2017
+ %
+ %  Author: Kateryna Nikishchikhina <kateryna.nikishchikhina@gmail.com>
+ %
+ %  This program is free software; you can redistribute it and/or
+ %  modify it under the terms of the GNU General Public License as
+ %  published by the Free Software Foundation, version 2 of the
+ %  License.
+
+
+
+Система "Максимус"
+
+Частина дипломної роботи Катерини Нікіщіхіної
