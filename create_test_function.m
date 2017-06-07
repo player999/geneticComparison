@@ -42,6 +42,14 @@ function f = create_test_function(fname)
         f = struct('func', @create_function_22, 'xlim', [-600,600], 'peaks', @peaks22);
         f.gpeaks = @peaks22;
     end
+    if strcmp(fname, 'F24') == 1
+        f = struct('func', @create_function_24, 'xlim', [-10,10], 'peaks', @peaks_empty);
+        f.gpeaks = @peaks_empty;
+    end
+    if strcmp(fname, 'F31') == 1
+        f = struct('func', @create_function_31, 'xlim', [-10,10], 'peaks', @peaks31);
+        f.gpeaks = @peaks31;
+    end
     if strcmp(fname, 'F46') == 1
         f = struct('func', @create_function_46, 'xlim', [-3,3], 'peaks', @peaks46);
         f.gpeaks = @gpeaks46;
@@ -104,6 +112,31 @@ function rval = create_function_20max(args)
        rval = rval - args(i)^2 + 10 * cos(2 * pi * args(i));
     end
     rval = rval / numel(args);
+end
+
+function rval = create_function_24(args)
+    rval = 1;
+    for i=1:numel(args)
+       added = 0;
+       for j=1:5
+           added = added + j * cos((j+1)*args(i) + j);
+       end
+       rval = rval * added;
+    end
+    rval = -rval;
+end
+
+function rval = create_function_31(args)
+    val1 = 0;
+    for i=1:numel(args)
+        val1 = val1 + abs(args(i));
+    end
+    val2 = 0;
+    for i=1:numel(args)
+        val2 = val2 + args(i)*args(i);
+    end
+    val2 = -val2;
+    rval = val1 * exp(val2);
 end
 
 function rval = create_function_46(args)
@@ -192,6 +225,13 @@ end
 
 function rval = peaks22(nargs)
     rval = zeros(1, nargs);
+end
+
+function rval = peaks31(nargs)
+    rval = [ 0.5  0.5;
+             0.5 -0.5;
+            -0.5  0.5;
+            -0.5 -0.5];
 end
 
 function rval = peaks46(nargs)
