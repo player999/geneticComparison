@@ -37,6 +37,7 @@ function [result_population, data] = algorithm4(parameters, population)
         distances = arrayfun(@(x)(real_euclidian_distance(pop(pairs1(x),:), pop(pairs2(x),:))), 1:pop_size/2);
         sigma = mean(distances) * sigma_coef;
     end
+    fprintf('Sigma = %f\n', sigma);
 
     for generation=1:generations
         %Mutation

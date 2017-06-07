@@ -20,6 +20,8 @@ function results = analyze_function(params, population)
         algorithm = @algorithm3;
     elseif (strcmp(algo,'algorithm4') == 1)
         algorithm = @algorithm4;
+    elseif (strcmp(algo,'algorithm4_1') == 1)
+        algorithm = @algorithm4_1;
     elseif (strcmp(algo,'algorithm5') == 1)
         algorithm = @algorithm5;
     elseif (strcmp(algo,'algorithm43') == 1)
