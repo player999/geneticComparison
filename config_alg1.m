@@ -19,5 +19,6 @@ params.common.delta = 0.01;
 params.common.sigma = 0.01;
 params.neighbourhood = 0.05;
 params.epsilon = 10e-5;
+params.rate = 0.5;
 params.common.population = 500;
 params.common.max_evals = 50000;

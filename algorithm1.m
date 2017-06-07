@@ -12,6 +12,7 @@
 function [result_population, data] = algorithm1(parameters, pop)
     evals = 0;
     neighbourhood = parameters.neighbourhood;
+    rate = parameters.rate;
     epsilon = parameters.epsilon;
     fitness_function = create_test_function(parameters.common.function);
     
@@ -49,7 +50,7 @@ function [result_population, data] = algorithm1(parameters, pop)
         if evals > parameters.common.max_evals
            break; 
         end
-        neighbourhood = neighbourhood / 2;
+        neighbourhood = neighbourhood * rate;
     end
     result_population = pop;
     data = struct;
