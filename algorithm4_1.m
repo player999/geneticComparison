@@ -83,9 +83,10 @@ function [result_population, data] = algorithm4_1(parameters, population)
         %Tournament
         new_pop = [];
         for i=1:pop_size
-            if sum(i == indices) > 0
-                candidates = cat(1, pop(i,:), offs((i-1)*offspring + 1:i*offspring,:));
-                scores = cat(1, parent_score(i), offspring_score((i-1)*offspring + 1:i*offspring));
+            [~, idx] = find(i == indices);
+            if numel(idx) > 0
+                candidates = cat(1, pop(i,:), offs((idx-1)*offspring + 1:idx*offspring,:));
+                scores = cat(1, parent_score(i), offspring_score((idx-1)*offspring + 1:idx*offspring));
                 winner = real_tournament(candidates, scores);
                 new_pop = cat(1, new_pop, winner);
             else
